@@ -1,10 +1,15 @@
 {% extends 'base.html' %}
 
 {% block content %}
-<h1>This shows the workouts</h1>
 
 <!-- Add new workout -->
+<h1>Add a new workout</h1>
 
+<form class="workout-form" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="save btn btn-primary">Add New Workout</button>
+</form>
 <!-- Show all workouts -->
 
 <!-- if workout is clicked on, show workout, add buttons to edit or remove workout -->

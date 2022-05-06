@@ -1,4 +1,7 @@
 from django.shortcuts import render,get_object_or_404,redirect
+from django.http import HttpResponseRedirect
+from workout_app.forms import WorkoutForm
+from workout_app.models import Workout
 
 # Create your views here.
 
@@ -12,4 +15,19 @@ def account_login(request):
 
 # This returns the workouts HTML template
 def workouts(request):
-    return render(request,'workouts.html',{})
+
+    workout = get_object_or_404(Workout)
+
+    if request.method == 'POST':
+        form = WorkoutForm(request.POST)
+
+        if form.is_valid():
+            form.save()
+            return redirect('workout_detail',pk=workout.pk)
+    else:
+        form = WorkoutForm()
+
+    return render(request,'workouts.html',{'form':form})
+
+def workout_detail(request):
+    return render(request,'workout_detail.html')
