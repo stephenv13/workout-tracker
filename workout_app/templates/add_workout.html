@@ -4,13 +4,14 @@
 
 <!-- Add new workout -->
 <h1>Add a new workout</h1>
-<a class='btn btn-primary' href="{% url 'add_workout' %}">Add a New Workout</a>
 
+<form class="workout-form" method="post">
+    {% csrf_token %}
+    {{form.as_p}}
+    <button type="submit" class="btn btn-primary">Save Workout</button>
+    
+</form>
 <!-- Show all workouts -->
-
-<div class="container">
-    {}
-</div>
 
 <!-- if workout is clicked on, show workout, add buttons to edit or remove workout -->
 
