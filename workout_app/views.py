@@ -1,8 +1,9 @@
+from msilib.schema import ListView
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponseRedirect
 from workout_app.forms import WorkoutForm
 from workout_app.models import Workout
-from django.views.generic import (DetailView,CreateView)
+from django.views.generic import (DetailView,CreateView,ListView)
 
 # Create your views here.
 
@@ -14,10 +15,10 @@ def home(request):
 def account_login(request):
     return render(request,'login.html',{})
 
-# This returns the workouts HTML template
-def workouts(request):
+# # This returns the workouts HTML template
+# def workouts(request):
 
-    return render(request,'workouts.html',{})
+#     return render(request,'workouts.html',{})
 
 class AddWorkoutView(CreateView):
     redirect_field_name = 'add_workout.html'
@@ -30,4 +31,8 @@ class AddWorkoutView(CreateView):
 class WorkoutDetailView(DetailView):
     model = Workout
 
-    # return render(request,'workout_detail.html')
+class WorkoutListView(ListView):
+    model = Workout
+
+    
+

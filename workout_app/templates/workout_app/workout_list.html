@@ -1,0 +1,42 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<!-- Add new workout -->
+    <div class="container">
+        <h1>Workouts</h1>
+        <a class='btn btn-primary' href="{% url 'add_workout' %}">Add a New Workout</a>
+    </div>
+
+
+
+
+<!-- Show all workouts -->
+<div class="vertical-center">
+    <div class="container">
+        {% for workout in workout_list %}
+        {% if forloop.first %}<div class="row">{% endif %}
+        <div class="col-md-4">
+                <div class="card" style="width: 18rem;">
+                    <img src="{% static 'images/snatch.jpg' %}" class="card-img-top" alt="image not found">
+                    <div class="card-body">
+                        <h5 class="card-title">{{ workout.workout_title }}</h5>
+                        <h6 class="card-author">By: {{ workout.author }}</h6>
+                        <p class="card-text">{{ workout.description }}</p>
+                        <a href="{% url 'workout_detail' workout.pk %}" class="btn btn-primary">View Workout</a>
+                    </div>
+                </div>
+        </div>
+        {% if forloop.counter|divisibleby:3 %}</div><div class="row">{% endif %}
+        {% if forloop.last %}</div>{% endif %}
+        {% endfor %}
+        
+    </div>
+</div>
+
+
+
+<!-- if workout is clicked on, show workout, add buttons to edit or remove workout -->
+
+{% endblock %}
