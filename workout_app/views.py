@@ -2,7 +2,7 @@ from msilib.schema import ListView
 from django.shortcuts import render,get_object_or_404,redirect
 from django.http import HttpResponseRedirect
 from workout_app.forms import WorkoutForm
-from workout_app.models import Workout
+from workout_app.models import Exercise, Workout
 from django.views.generic import (DetailView,CreateView,ListView)
 
 # Create your views here.
@@ -31,8 +31,11 @@ class AddWorkoutView(CreateView):
 class WorkoutDetailView(DetailView):
     model = Workout
 
+    class ExercsieListView(ListView):
+        model = Exercise
+
 class WorkoutListView(ListView):
     model = Workout
 
-    
+
 
