@@ -2,13 +2,57 @@
 
 {% block content %}
 
-<!-- Show the workout -->
-<h1><strong>Workout Title: </strong>{{ workout.workout_title }}</h1>
-<h2><strong>Description: </strong>{{ workout.description }}</h2>
-<h3><strong>By: </strong>{{ workout.author }}</h3>
+<div class="container">
+    <!-- Show the workout -->
+    <h1><strong>Workout Title: </strong>{{ workout.workout_title }}</h1>
+    <h2><strong>Description: </strong>{{ workout.description }}</h2>
+    <h3><strong>By: </strong>{{ workout.author }}</h3>
 
-<!-- Add exercise -->
-<a class="btn btn-primary" href="">Add Exercise</a>
-<a class="btn btn-danger" href="">Remove Exercise</a>
+
+
+    <!-- Table for all of the exercises in a workout -->
+    <table class="table">
+        <thead>
+        <tr>
+            <th scope="col">#</th>
+            <th scope="col">Exercise</th>
+            <th scope="col">Number of Sets</th>
+            <th scope="col">Number of Reps</th>
+            <th scope="col">Average Weight</th>
+        </tr>
+        </thead>
+
+
+
+        <tbody>
+            <!-- For each exercise, add a new row in the table -->
+        {% for exercise in workout.exercises.all %}
+        
+        <tr>
+            {% if forloop.counter %}<th scope="row">{{ forloop.counter }}</th>{% endif %}
+            <td>{{ exercise.name }}</td>
+            <td>{{ exercise.number_of_sets }}</td>
+            <td>{{ exercise.number_of_reps }}</td>
+            <td>{{ exercise.weight }}</td>
+
+            <!-- Edit exercise button -->
+            <td><a class="btn btn-success" href="{% url 'edit_exercise' workout.pk exercise.pk %}">Edit</a></td>
+            <!-- remove exercise button -->
+            <td><a class="btn btn-danger" href="">Remove</a></td>
+        </tr>
+
+        {% endfor %}
+
+        </tbody>
+    </table>
+
+
+
+    <!-- Add exercise -->
+    <a class="btn btn-primary" href="{% url 'add_exercise' workout.pk %}">Add Exercise</a>
+    
+</div>
+
+
 
 {% endblock %}
