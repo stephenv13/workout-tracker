@@ -1,10 +1,8 @@
 from msilib.schema import ListView
 from django.shortcuts import render,get_object_or_404,redirect
-from django.http import HttpResponseRedirect
 from workout_app.forms import ExerciseForm, WorkoutForm
 from workout_app.models import Exercise, Workout
 from django.views.generic import (DetailView,CreateView,ListView,UpdateView)
-from django.urls import reverse
 
 # Create your views here.
 
@@ -50,10 +48,6 @@ class EditExerciseView(UpdateView):
 
     model = Exercise
 
-class RemoveWorkoutView(DetailView):
-
-    model = Exercise
-
 # This returns the homepage HTML template
 def home(request):
     return render(request,'home.html',{})
@@ -92,3 +86,12 @@ def remove_exercise(request, workout_id, pk):
 
     return redirect('workout_detail',pk=workout_id)
 
+'''
+This function allows the user to delete a workout
+'''
+def remove_workout(request, pk):
+
+    workout = get_object_or_404(Workout,pk=pk)
+    workout.delete()
+
+    return redirect('workouts')

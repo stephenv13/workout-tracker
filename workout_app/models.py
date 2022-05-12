@@ -1,6 +1,5 @@
 from django.db import models
 from django.urls import reverse
-from django.shortcuts import get_object_or_404
 
 # Create your models here.
 
@@ -18,7 +17,7 @@ class Workout(models.Model):
 
 class Exercise(models.Model):
 
-    workout = models.ForeignKey('workout_app.workout',related_name = 'exercises',on_delete=models.DO_NOTHING)
+    workout = models.ForeignKey('workout_app.workout',related_name = 'exercises',on_delete=models.CASCADE)
     name = models.CharField(max_length=20)
     number_of_sets = models.CharField(max_length=2)
     number_of_reps = models.CharField(max_length=2)
