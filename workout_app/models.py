@@ -1,5 +1,6 @@
 from django.db import models
 from django.urls import reverse
+from django.shortcuts import get_object_or_404
 
 # Create your models here.
 
@@ -23,8 +24,10 @@ class Exercise(models.Model):
     number_of_reps = models.CharField(max_length=2)
     weight = models.CharField(max_length=3)
 
-    def get_absolute_url(exercise_pk):
-        return reverse('workout_detail',kwargs={'pk':exercise_pk})
+    # return back to the workout detail page for the specified workout id
+    def get_absolute_url(self):
+        return reverse('workout_detail',kwargs={'pk':self.workout_id})
+        
 
     def __str__(self) -> str:
         return self.name

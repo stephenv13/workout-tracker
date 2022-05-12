@@ -4,6 +4,7 @@ from django.http import HttpResponseRedirect
 from workout_app.forms import ExerciseForm, WorkoutForm
 from workout_app.models import Exercise, Workout
 from django.views.generic import (DetailView,CreateView,ListView,UpdateView)
+from django.urls import reverse
 
 # Create your views here.
 
@@ -23,10 +24,16 @@ class WorkoutDetailView(DetailView):
 class WorkoutListView(ListView):
     model = Workout
 
+    # use get_queryset(self) to specify a query to sort the list by
+
+    # def get_queryset(self):
+    #     # SELECT * FROM Post WHERE published_date <= timezone.now().ect
+    #     return Post.objects.filter(published_date__lte=timezone.now()).order_by('-published_date')
+
 '''
 This CBV will allow the user to edit a workout
 '''
-class EditExerciseView(UpdateView):
+class EditWorkoutView(UpdateView):
     redirect_field_name = ''
 
     form_class = WorkoutForm
@@ -40,6 +47,10 @@ class EditExerciseView(UpdateView):
     redirect_field_name = 'workout_app/workout_detail.html'
 
     form_class = ExerciseForm
+
+    model = Exercise
+
+class RemoveWorkoutView(DetailView):
 
     model = Exercise
 
@@ -74,11 +85,10 @@ def add_exercise(request,pk):
 '''
 This function allows the user to delete an exercise
 '''
-def remove_exercise(request,pk):
+def remove_exercise(request, workout_id, pk):
 
-    exercise = get_object_or_404(Exercise,pk)
-    workout_pk = exercise.workout.pk
+    exercise = get_object_or_404(Exercise,pk=pk)
     exercise.delete()
 
-    return redirect('workout_detail',pk=workout_pk)
+    return redirect('workout_detail',pk=workout_id)
 
