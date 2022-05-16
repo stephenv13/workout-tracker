@@ -1,0 +1,18 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block content %}
+
+<div class="container">
+    <!-- Add new workout -->
+    <h1 class="new">Add a new workout</h1>
+
+    <form class="workout-form" method="post">
+        {% csrf_token %}
+        {{form.as_p}}
+        <button type="submit" class="btn btn-remove">Save Workout</button>
+        
+    </form>
+</div>
+
+{% endblock %}

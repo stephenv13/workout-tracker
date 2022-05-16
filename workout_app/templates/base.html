@@ -15,26 +15,30 @@
     <!-- https://coolors.co/d64045-e9fff9-9ed8db-467599-1d3354 -->
 
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{% static 'css/styling.css' %}">
+    <link rel="stylesheet" type="text/css" href="{% static 'css/test.css' %}">
 
     <!-- Link to JS -->
     <script src="{% static 'js/script.js' %}"></script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Koulen&display=swap" rel="stylesheet"> 
 
     <title>Swole Tracker</title>
 </head>
 <body>
 
     <!-- NAV BAR -->
-    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+    <nav class="navbar navbar-expand-lg navbar-custom">
         <div class="container-fluid">
 
-            <!-- <a class="navbar-brand" href="{% url 'home' %}">Swole Tracker</a> -->
-            <img src="{% static "images/dumbbell.svg" %}" alt="dumbbell" width="32" height="32">
+            <img class="custom-image" src="{% static "images/dumbbell2.svg" %}" alt="dumbbell" width="32" height="32">
           
           <div class="collapse navbar-collapse" id="navbarSupportedContent">
             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+
               <li class="nav-item">
-                <a class="nav-link active" aria-current="page" href="{% url 'home' %}">Home</a>
+                <a class="nav-link active" id="navbutton" aria-current="page" href="{% url 'home' %}">Home</a>
               </li>
 
               <li class="nav-item">
@@ -60,7 +64,7 @@
                 <div class="p-2 bd-highlight">
                     <ul class="navbar-nav">
                         <li class="nav-item">
-                            <a class="nav-link active" aria-current="page" href="https://github.com/stephenv13/workout-tracker"><img src="{% static "images/github.svg" %}" alt="github" width="26" height="26"></a>
+                            <a class="nav-link active" aria-current="page" href="https://github.com/stephenv13/workout-tracker"><img src="{% static "images/github2.svg" %}" alt="github" width="26" height="26"></a>
                         </li>   
                     </ul> 
                 </div>

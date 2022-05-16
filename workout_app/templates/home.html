@@ -1,9 +1,25 @@
 {% extends 'base.html' %}
+{% load static %}
 
 {% block content %}
-<h1>Welcome to Swole Tracker</h1>
 
-<h2>About Us</h2>
+
+<div class="container-fluid py-5 jumbo-container">
+    <h1 class="display-5 fw-bold welcome">Welcome to Swole Tracker</h1>
+    <p class="col-md-8 fs-4">Swole Tracker is a new way to track your workouts. 
+        Add your workouts, exercises, and track your progress.. all in one seamless app.
+
+        <br><br>
+        Click the button below to get started.
+    </p>
+    <a class="btn btn-lg btn-started" href="{% url 'workouts' %}">View Workouts</a>
+  </div>
+
+
+  <!-- HOW IT WORKS -->
+  <div class="container">
+    <h1 class="get-started">HOW IT WORKS</h1>
+  </div>
 
 <!-- Cycle through random example workouts -->
 

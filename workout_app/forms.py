@@ -9,9 +9,9 @@ class WorkoutForm(forms.ModelForm):
         fields = ('workout_title','description','author')
 
         widgets ={
-            'workout_title':forms.TextInput(attrs={'class':'textinputclass'}),
-            'description':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent'}),
-            'author':forms.TextInput(attrs={'class':'textinputclass'}),
+            'workout_title':forms.TextInput(attrs={'class':'textinputclass','placeholder':'Enter Title...'}),
+            'description':forms.Textarea(attrs={'class':'editable medium-editor-textarea postcontent','placeholder':'Enter Description...'}),
+            'author':forms.TextInput(attrs={'class':'textinputclass','placeholder':"Enter Author's Name..."}),
 
         }
 
@@ -22,8 +22,8 @@ class ExerciseForm(forms.ModelForm):
         fields = ('name','number_of_sets','number_of_reps','weight')
 
         widgets = {
-            'name':forms.TextInput(attrs={'class':'textinputclass'}),
-            'number_of_sets':forms.NumberInput(attrs={'class':'numberinputclass'}),
-            'number_of_reps':forms.NumberInput(attrs={'class':'numberinputclass'}),
-            'weight':forms.NumberInput(attrs={'class':'numberinputclass'})
+            'name':forms.TextInput(attrs={'class':'textinputclass','placeholder':"Enter Exercsie Name..."}),
+            'number_of_sets':forms.NumberInput(attrs={'class':'numberinputclass','placeholder':"Enter Number of Sets..."}),
+            'number_of_reps':forms.NumberInput(attrs={'class':'numberinputclass','placeholder':"Enter Number of Reps..."}),
+            'weight':forms.NumberInput(attrs={'class':'numberinputclass','placeholder':"Enter Total Weight..."})
         }

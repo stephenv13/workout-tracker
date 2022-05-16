@@ -5,13 +5,11 @@
 
 <script src="{% static 'js/script.js' %}"></script>
 
-<div class="container">
+<div class="container workout-detail">
     <!-- Show the workout -->
-    <h1><strong>Workout Title: </strong>{{ workout.workout_title }}</h1>
-    <h2><strong>Description: </strong>{{ workout.description }}</h2>
-    <h3><strong>By: </strong>{{ workout.author }}</h3>
-
-
+    <h1 class="workout-title">{{ workout.workout_title }}</h1>
+    <h3 class="workout-author"><strong>By: </strong>{{ workout.author }}</h3>
+    <h2 class="workout-desc">{{ workout.description }}</h2>
 
     <!-- Table for all of the exercises in a workout -->
     <table class="table">
@@ -39,10 +37,10 @@
             <td>{{ exercise.weight }}</td>
 
             <!-- Edit exercise button -->
-            <td><a class="btn btn-success" href="{% url 'edit_exercise' exercise.workout_id exercise.pk %}">Edit</a></td>
+            <td><a class="btn btn-edit" href="{% url 'edit_exercise' exercise.workout_id exercise.pk %}">Edit</a></td>
 
             <!-- remove exercise modal button -->
-            <td><button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button></td>
+            <td><button type="button" class="btn btn-danger btn-remove" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button></td>
             <!-- <td><a class="btn btn-danger" href="{% url 'remove_exercise' exercise.workout_id exercise.pk %}">Remove</a></td> -->
         </tr>
 
@@ -59,8 +57,8 @@
                 <p>Please click "Confirm" to remove the exercise from the workout.</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="{% url 'remove_exercise' exercise.workout_id exercise.pk %}">Confirm</a>
+                <button type="button" class="btn btn-viewworkout" data-bs-dismiss="modal">Cancel</button>
+                <a class="btn btn-remove" href="{% url 'remove_exercise' exercise.workout_id exercise.pk %}">Confirm</a>
                 <!-- <button type="button" class="btn btn-primary">Confirm</button> -->
                 </div>
             </div>
@@ -74,7 +72,7 @@
  
 
     <!-- Add exercise -->
-    <a class="btn btn-primary" href="{% url 'add_exercise' workout.pk %}">Add Exercise</a>
+    <a class="btn btn-remove" href="{% url 'add_exercise' workout.pk %}">Add Exercise</a>
     
 </div>
 

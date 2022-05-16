@@ -6,6 +6,14 @@
     align-items: center;
   }
 
-  .card{
-    margin-bottom: 5px;
-  }
+.card{
+  margin-bottom: 5px;
+}
+
+/* new comment */
+
+
+.welcome {
+  font-size: 2rem;
+  font-weight: bold;
+}

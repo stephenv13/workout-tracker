@@ -5,8 +5,9 @@
 
 <!-- Add new workout -->
     <div class="container">
-        <h1>Workouts</h1>
-        <a class='btn btn-primary' href="{% url 'add_workout' %}">Add a New Workout</a>
+        <h1 class="workouts-title">Workouts</h1>
+        <p>To get started, Click the "Add a New Workout Button"</p>
+        <a class='btn btn-addnew' href="{% url 'add_workout' %}">Add a New Workout</a>
     </div>
 
 
@@ -22,10 +23,10 @@
                     <img src="{% static 'images/snatch.jpg' %}" class="card-img-top" alt="image not found">
                     <div class="card-body">
                         <h5 class="card-title">{{ workout.workout_title }}</h5>
-                        <h6 class="card-author">By: {{ workout.author }}</h6>
+                        <h6 class="card-author"><strong>By: </strong> {{ workout.author }}</h6>
                         <p class="card-text">{{ workout.description }}</p>
-                        <a href="{% url 'workout_detail' workout.pk %}" class="btn btn-primary">View Workout</a>
-                        <button type="button" class="btn btn-danger" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button>
+                        <a href="{% url 'workout_detail' workout.pk %}" class="btn btn-viewworkout">View Workout</a>
+                        <button type="button" class="btn btn-danger btn-remove" data-bs-toggle="modal" data-bs-target="#removeModal">Remove</button>
 
                     </div>
                 </div>
@@ -43,8 +44,8 @@
                 <p>Please click "Confirm" to remove the exercise from the workout.</p>
                 </div>
                 <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Cancel</button>
-                <a class="btn btn-primary" href="{% url 'remove_workout' workout.pk %}">Confirm</a>
+                <button type="button" class="btn btn-viewworkout" data-bs-dismiss="modal">Cancel</button>
+                <a class="btn btn-remove" href="{% url 'remove_workout' workout.pk %}">Confirm</a>
                 <!-- <button type="button" class="btn btn-primary">Confirm</button> -->
                 </div>
             </div>

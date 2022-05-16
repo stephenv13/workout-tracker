@@ -1,0 +1,178 @@
+body{
+  background-color: #1D3354;
+}
+
+.vertical-center {
+    min-height: 100%;  /* Fallback for browsers do NOT support vh unit */
+    min-height: 100%; /* These two lines are counted as one :-)       */
+  
+    display: flex;
+    align-items: center;
+  }
+
+.card{
+  margin-bottom: 10px;
+  background-color: #467599;
+}
+
+p{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+}
+
+.navbar-custom{
+  background-color: #D64045;
+}
+
+.nav-link{
+  margin-left: 5px;
+  font-size: 1.75rem;
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  color: #E9FFF9;
+}
+
+/* HOME PAGE */
+.welcome {
+  font-size: 4rem;
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  color: #E9FFF9;
+}
+
+.jumbo-container{
+  margin: 10px;
+  background-color: #467599;
+  border-radius: 10px;
+}
+
+/* WORKOUTS PAGE */
+.btn-started,.btn-addnew{
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  color: #E9FFF9;
+  font-size: 1.75rem;
+  background-color: #D64045;
+}
+
+.get-started{
+  margin-top: 50px;
+  text-align: center;
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  font-size: 5rem;
+  color: #E9FFF9;
+}
+
+.workouts-title{
+  margin-top: 10px;
+  text-align: center;
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  font-size: 5rem;
+  color: #E9FFF9;
+}
+
+.card-title{
+  font-weight: bold;
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+}
+
+.card-author,.card-text{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+}
+
+.btn-viewworkout{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+  background-color: #1D3354;
+}
+
+.btn-remove{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+  background-color: #D64045;
+}
+
+/* VIEW WORKOUT PAGE */
+.workout-detail{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+}
+
+.workout-title{
+  font-size: 5rem;
+  text-align: center;
+  font-weight: bold;
+  text-decoration: underline;
+}
+
+.workout-author{
+  text-align: center;
+}
+.workout-desc{
+  font-size: 1rem;
+  margin-bottom: 20px;
+}
+
+.table{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+  font-size: 1.5rem;
+}
+
+.btn-edit{
+  font-family: 'Koulen', cursive;
+  color: #E9FFF9;
+  background-color: #467599;
+}
+
+/* MODAL */
+.modal-content{
+  background-color: #467599;
+}
+
+.modal-title{
+  color: #E9FFF9;
+  font-family: 'Koulen', cursive;
+}
+
+/* ADD NEW WORKOUT */
+.new-workout{
+  font-family: 'Koulen', cursive;
+  text-align: center;
+  margin: 20px;
+  color: #E9FFF9;
+  font-size: 5rem;
+}
+
+/* FORMS */
+label{
+  text-align: right;
+}
+input[type=text]{
+  display: inline-block;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: #D64045 5px 5px;
+}
+
+.postcontent{
+  padding: 5px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: #D64045 5px 5px;
+  max-height: 100px;
+  max-width: 300px;
+}
+
+.numberinputclass{
+  display: inline-block;
+  padding: 5px;
+  margin: 10px;
+  border-radius: 15px;
+  box-shadow: #D64045 5px 5px;
+}
