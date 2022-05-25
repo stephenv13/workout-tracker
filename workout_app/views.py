@@ -1,4 +1,3 @@
-from msilib.schema import ListView
 from django.shortcuts import render,get_object_or_404,redirect
 from workout_app.forms import ExerciseForm, WorkoutForm
 from workout_app.models import Exercise, Workout
