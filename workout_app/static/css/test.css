@@ -46,6 +46,13 @@ p{
   border-radius: 10px;
 }
 
+.ordered-list{
+  font-size: 2rem;
+  font-family: 'Koulen', cursive;
+  font-weight: bold;
+  color: #E9FFF9;
+}
+
 /* WORKOUTS PAGE */
 .btn-started,.btn-addnew{
   font-family: 'Koulen', cursive;
@@ -74,12 +81,14 @@ p{
 }
 
 .card-title{
+  font-size: 1.5rem;
   font-weight: bold;
   font-family: 'Koulen', cursive;
   color: #E9FFF9;
 }
 
 .card-author,.card-text{
+  font-size: 1rem;
   font-family: 'Koulen', cursive;
   color: #E9FFF9;
 }
